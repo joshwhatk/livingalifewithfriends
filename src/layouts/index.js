@@ -7,7 +7,9 @@ import './all.sass';
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Living a Life with Friends" />
+    <Helmet title="Home | Living a Life with Friends">
+      <meta name="google-site-verification" content="x5uOZNO2WpCH3md13x9SKr8L92_MiWLnUF6tq4XXrOg" />
+    </Helmet>
     <Navbar />
     <div>{children()}</div>
   </div>
