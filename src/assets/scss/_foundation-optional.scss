@@ -1,0 +1,186 @@
+@import "node_modules/foundation-sites/scss/foundation";
+@mixin foundation-optional() {
+
+  //-- Feature Toggles within Foundation
+  $flex: true !default;
+  $prototype: false !default;
+  $xy-grid: false !default;
+
+  //-- RS Component Toggles
+  $foundation-grid: false !default;
+  $foundation-global-styles: false !default;
+  $foundation-typography: false !default;
+  $foundation-forms: false !default;
+  $foundation-button: false !default;
+  $foundation-accordion: false !default;
+  $foundation-accordion-menu: false !default;
+  $foundation-badge: false !default;
+  $foundation-breadcrumbs: false !default;
+  $foundation-button-group: false !default;
+  $foundation-callout: false !default;
+  $foundation-card: false !default;
+  $foundation-close-button: false !default;
+  $foundation-menu: false !default;
+  $foundation-menu-icon: false !default;
+  $foundation-drilldown-menu: false !default;
+  $foundation-dropdown: false !default;
+  $foundation-dropdown-menu: false !default;
+  $foundation-responsive-embed: false !default;
+  $foundation-label: false !default;
+  $foundation-media-object: false !default;
+  $foundation-off-canvas: false !default;
+  $foundation-orbit: false !default;
+  $foundation-pagination: false !default;
+  $foundation-progress-bar: false !default;
+  $foundation-slider: false !default;
+  $foundation-sticky: false !default;
+  $foundation-reveal: false !default;
+  $foundation-switch: false !default;
+  $foundation-table: false !default;
+  $foundation-tabs: false !default;
+  $foundation-thumbnail: false !default;
+  $foundation-title-bar: false !default;
+  $foundation-tooltip: false !default;
+  $foundation-top-bar: false !default;
+  $foundation-visibility-classes: false !default;
+  $foundation-float-classes: false !default;
+
+  @if $flex {
+    $global-flexbox: true !global;
+  }
+
+  @if $foundation-global-styles {
+    @include foundation-global-styles;
+  }
+
+  @if $foundation-grid {
+    @if not $flex {
+      @include foundation-grid;
+    }
+    @else {
+      @if $xy-grid {
+        @include foundation-xy-grid-classes;
+      }
+      @else {
+        @include foundation-flex-grid;
+      }
+    }
+  }
+
+  @if $foundation-typography {
+    @include foundation-typography;
+  }
+
+  @if $foundation-forms {
+    @include foundation-forms;
+  }
+  @if $foundation-button {
+    @include foundation-button;
+  }
+  @if $foundation-accordion {
+    @include foundation-accordion;
+  }
+  @if $foundation-accordion-menu {
+    @include foundation-accordion-menu;
+  }
+  @if $foundation-badge {
+    @include foundation-badge;
+  }
+  @if $foundation-breadcrumbs {
+    @include foundation-breadcrumbs;
+  }
+  @if $foundation-button-group {
+    @include foundation-button-group;
+  }
+  @if $foundation-callout {
+    @include foundation-callout;
+  }
+  @if $foundation-card {
+    @include foundation-card;
+  }
+  @if $foundation-close-button {
+    @include foundation-close-button;
+  }
+  @if $foundation-menu {
+    @include foundation-menu;
+  }
+  @if $foundation-menu-icon {
+    @include foundation-menu-icon;
+  }
+  @if $foundation-drilldown-menu {
+    @include foundation-drilldown-menu;
+  }
+  @if $foundation-dropdown {
+    @include foundation-dropdown;
+  }
+  @if $foundation-dropdown-menu {
+    @include foundation-dropdown-menu;
+  }
+  @if $foundation-responsive-embed {
+    @include foundation-responsive-embed;
+  }
+  @if $foundation-label {
+    @include foundation-label;
+  }
+  @if $foundation-media-object {
+    @include foundation-media-object;
+  }
+  @if $foundation-off-canvas {
+    @include foundation-off-canvas;
+  }
+  @if $foundation-orbit {
+    @include foundation-orbit;
+  }
+  @if $foundation-pagination {
+    @include foundation-pagination;
+  }
+  @if $foundation-progress-bar {
+    @include foundation-progress-bar;
+  }
+  @if $foundation-slider {
+    @include foundation-slider;
+  }
+  @if $foundation-sticky {
+    @include foundation-sticky;
+  }
+  @if $foundation-reveal {
+    @include foundation-reveal;
+  }
+  @if $foundation-switch {
+    @include foundation-switch;
+  }
+  @if $foundation-table {
+    @include foundation-table;
+  }
+  @if $foundation-tabs {
+    @include foundation-tabs;
+  }
+  @if $foundation-thumbnail {
+    @include foundation-thumbnail;
+  }
+  @if $foundation-title-bar {
+    @include foundation-title-bar;
+  }
+  @if $foundation-tooltip {
+    @include foundation-tooltip;
+  }
+  @if $foundation-top-bar {
+    @include foundation-top-bar;
+  }
+  @if $foundation-visibility-classes {
+    @include foundation-visibility-classes;
+  }
+  @if $foundation-float-classes {
+    @include foundation-float-classes;
+  }
+
+  @if $foundation-grid {
+    @if $flex {
+      @include foundation-flex-classes;
+    }
+  }
+
+  @if $prototype {
+    @include foundation-prototype-classes;
+  }
+}

@@ -1,0 +1,7 @@
+.container {
+  @include xy-grid-container($width: 1200px);
+}
+
+.text-container {
+  @include xy-grid-container($width: 768px);
+}

@@ -1,0 +1,35 @@
+@import "node_modules/foundation-sites/scss/util/util";
+@import "colors";
+
+// 1. Global
+// ---------
+
+$foundation-palette: (
+  primary: $friendly-blue,
+  secondary: $persian-green,
+  tertiary: $prussian-blue,
+  success: $success-green,
+  warning: $warning-yellow,
+  alert: $error-red,
+);
+
+@include add-foundation-colors;
+$tertiary-color: get-color(tertiary);
+
+// 2. Breakpoints
+// --------------
+$breakpoints: (
+  small: 0,
+  mobile: 640px,
+  medium: 769px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+  xxxlarge: 1801px
+);
+$breakpoint-classes: (small mobile medium large);
+
+// 55. Top Bar
+// -----------
+
+$topbar-background: $white;
