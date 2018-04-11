@@ -48,5 +48,8 @@ $foundation-visibility-classes: true;
 @include foundation-optional();
 
 @import "base/grid";
+@import "base/fonts";
+@import "base/typography";
 
 @import "components/heroes";
+@import "components/navbar";

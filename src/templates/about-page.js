@@ -1,19 +1,24 @@
 import React from 'react';
 import graphql from 'graphql';
 import Content, { HTMLContent } from '../components/Content';
-import backgroundImage from '../assets/images/about/happy-kid-picture.jpeg';
+import backgroundImage from '../assets/images/about/happy-kid-picture.jpg';
+import backgroundImageMobile from '../assets/images/about/happy-kid-picture-mobile.jpg';
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
   let backgroundCss = {
     backgroundImage: "url(" + backgroundImage + ")",
+  },
+  backgroundCssMobile = {
+    backgroundImage: "url(" + backgroundImageMobile + ")",
   };
 
   return (
     <React.Fragment>
       <header id="about-header">
         <div className="Hero Hero--about">
-          <div className="Hero-background" style={backgroundCss}></div>
+          <div className="Hero-background show-for-medium" style={backgroundCss}></div>
+          <div className="Hero-background hide-for-medium" style={backgroundCssMobile}></div>
         </div>
       </header>
       <section id="content">

@@ -2,28 +2,30 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import github from '../img/github-icon.svg';
-import logo from '../img/logo.svg';
+import logo from '../assets/images/logo.svg';
 
 const Navbar = () => (
   <nav className="grid-container">
     <div className="top-bar">
       <div className="top-bar-left">
         <ul className="menu">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item">
-              <figure className="image">
-                <img src={logo} alt="Living a Life with Friends" style={{ width: '88px' }} />
-              </figure>
-            </Link>
-          </div>
-          <li>
-            <Link to="/about">
-              About
-            </Link>
-          </li>
+          <Link to="/" className="brand">
+            <figure className="image">
+              <img src={logo} alt="Living a Life with Friends" style={{ width: '388px' }} />
+            </figure>
+          </Link>
+        </ul>
+      </div>
+      <div className="top-bar-right">
+        <ul className="menu">
           <li>
             <Link to="/podcast">
               Podcast
+            </Link>
+          </li>
+          <li>
+            <Link to="/about">
+              About
             </Link>
           </li>
           <li>

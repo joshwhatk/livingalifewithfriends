@@ -6,14 +6,10 @@
     background-color: $default-hero-background-color;
     background-size: cover;
     background-position: center center;
-    padding: 1px 0;
-    min-height: 32rem;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    min-height: 69vw;
 
     @include breakpoint(medium) {
-      padding-right: 1rem;
-      padding-left: 1rem;
+      min-height: 35vw;
     }
   }
 }
