@@ -1,3 +1,3 @@
-import homePage from './templates/home-page';
+import homePage from '../templates/home-page';
 
 export default homePage;
