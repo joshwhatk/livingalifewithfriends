@@ -22,15 +22,15 @@ $header-font-family: $heading-font;
 
 $foundation-palette: (
   primary: $friendly-blue,
-  secondary: $persian-green,
-  tertiary: $prussian-blue,
+  secondary: $conch-green,
+  // tertiary: $prussian-blue,
   success: $success-green,
   warning: $warning-yellow,
   alert: $error-red,
 );
 
 @include add-foundation-colors;
-$tertiary-color: get-color(tertiary);
+// $tertiary-color: get-color(tertiary);
 
 // 2. Breakpoints
 // --------------
