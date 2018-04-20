@@ -1,19 +1,22 @@
 ---
 templateKey: 'about-page'
 path: /about
-title: About our values
+title: This is Us
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+### Hi there!
+We are Josh and Ashley! We currently host a podcast, [Stressed to Blessed](/podcast), where we talk about building family culture and are available [@alifewithfriends](https://www.instagram.com/alifewithfriends/) on Instagram.
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+### A Little About Us
+We met at the age of 13 at Josh’s home church ⛪️ (imagine wallpaper, blue carpet and wine colored chairs&mdash;straight up 90s! 😆) Engaged at 17 and married at 19, we now have 3 beautiful girls that inspire us daily! 👧🏻👧🏻👧🏻🎀
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+When our oldest was just a toddler, it was difficult for us to find parenting advice that truly reflected God’s heart towards family. It was either too “fluffy” ☁️ or too harsh ⚡️. So we looked to the Bible to see what God (the perfect Parent!) had to say, and as it turns out, He has a lot to say on the subject! 🙌🏼
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+Whether it’s discipline, picky eating, or just how to enjoy life, we’ll talk about it!🎙 We believe that when you stop focusing on all the RULES👨🏻‍⚖️ and start focusing on the RELATIONSHIP 💖, you can begin to build the culture that you want in your family.
+
+Do we have all the answers?? Ha! No. 😂 But this is parenting from the trenches. We’ll talk about what we’re going through, and what we have learned. 💡
+We’ll give it to you raw & real. 👊🏼 We are here with you growing and learning everyday! ✨
+
+As parents, we should come alongside each other, not attacking one another. We should encourage, through grace and love, and not settle for an average, mediocre life.
+
+When you work hard, love much, and pray often, your future looks AWESOME!
