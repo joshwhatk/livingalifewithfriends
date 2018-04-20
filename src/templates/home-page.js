@@ -27,6 +27,7 @@ export const HomePageTemplate = ({ title, content, contentComponent, intro }) =>
             <div className="column is-10 is-offset-1">
               <div className="section">
                 <h1>{title}</h1>
+                <PageContent className="content" content={intro} />
                 <PageContent className="content" content={content} />
               </div>
             </div>
@@ -38,26 +39,30 @@ export const HomePageTemplate = ({ title, content, contentComponent, intro }) =>
 };
 
 export default ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { edges: posts } = data.allMarkdownRemark;
+  //-- @hardcoded: this matches the placement exactly
+  const intro = posts.filter((post) => (post.node.frontmatter.placement === 1))[0];
+  const homePage = posts.filter((post) => (post.node.frontmatter.placement === 2))[0];
 
   return (<HomePageTemplate
     contentComponent={HTMLContent}
-    title={post.frontmatter.title}
-    content={post.html}
-    intro={post.frontmatter.intro}
+    title={homePage.node.frontmatter.title}
+    content={homePage.node.html}
+    intro={intro.node.html}
   />);
 };
 
 export const homePageQuery = graphql`
   query HomePage($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        path
-        title
-        intro {
-          heading
-          description
+    allMarkdownRemark(filter: {frontmatter: { path: { eq: $path }}}) {
+      edges {
+        node {
+          html
+          frontmatter {
+            path
+            title
+            placement
+          }
         }
       }
     }
