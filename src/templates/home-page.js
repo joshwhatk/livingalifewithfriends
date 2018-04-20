@@ -12,7 +12,6 @@ export const HomePageTemplate = ({ title, content, contentComponent, intro }) =>
   backgroundCssMobile = {
     backgroundImage: "url(" + backgroundImageMobile + ")",
   };
-  console.log(intro);
 
   return (
     <React.Fragment>
@@ -45,6 +44,7 @@ export default ({ data }) => {
     contentComponent={HTMLContent}
     title={post.frontmatter.title}
     content={post.html}
+    intro={post.frontmatter.intro}
   />);
 };
 
