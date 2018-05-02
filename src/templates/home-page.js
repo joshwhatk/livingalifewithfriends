@@ -70,7 +70,7 @@ export default ({ data }) => {
 };
 
 export const homePageQuery = graphql`
-  query HomePage($path: String!) {
+  query MyHomePage($path: String!) {
     allMarkdownRemark(filter: { frontmatter: { path: { eq: $path } } }) {
       edges {
         node {
