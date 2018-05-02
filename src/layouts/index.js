@@ -8,7 +8,10 @@ import '../assets/scss/style.scss';
 const TemplateWrapper = ({ children }) => (
   <main className="grid-container-fluid">
     <Helmet title="Home | Living a Life with Friends">
-      <meta name="google-site-verification" content="x5uOZNO2WpCH3md13x9SKr8L92_MiWLnUF6tq4XXrOg" />
+      <meta
+        name="google-site-verification"
+        content="x5uOZNO2WpCH3md13x9SKr8L92_MiWLnUF6tq4XXrOg"
+      />
     </Helmet>
     <Navbar />
     {children()}
@@ -16,7 +19,7 @@ const TemplateWrapper = ({ children }) => (
 );
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func
 };
 
 export default TemplateWrapper;

@@ -4,21 +4,32 @@ import Content, { HTMLContent } from '../components/Content';
 import backgroundImage from '../assets/images/about/happy-kid-picture.jpg';
 import backgroundImageMobile from '../assets/images/about/happy-kid-picture-mobile.jpg';
 
-export const HomePageTemplate = ({ title, content, contentComponent, intro }) => {
+export const HomePageTemplate = ({
+  title,
+  content,
+  contentComponent,
+  intro
+}) => {
   const PageContent = contentComponent || Content;
   let backgroundCss = {
-    backgroundImage: "url(" + backgroundImage + ")",
-  },
-  backgroundCssMobile = {
-    backgroundImage: "url(" + backgroundImageMobile + ")",
-  };
+      backgroundImage: 'url(' + backgroundImage + ')'
+    },
+    backgroundCssMobile = {
+      backgroundImage: 'url(' + backgroundImageMobile + ')'
+    };
 
   return (
     <React.Fragment>
       <header id="about-header">
         <div className="Hero Hero--about">
-          <div className="Hero-background show-for-medium" style={backgroundCss}></div>
-          <div className="Hero-background hide-for-medium" style={backgroundCssMobile}></div>
+          <div
+            className="Hero-background show-for-medium"
+            style={backgroundCss}
+          />
+          <div
+            className="Hero-background hide-for-medium"
+            style={backgroundCssMobile}
+          />
         </div>
       </header>
       <section id="content">
@@ -41,20 +52,26 @@ export const HomePageTemplate = ({ title, content, contentComponent, intro }) =>
 export default ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
   //-- @hardcoded: this matches the placement exactly
-  const intro = posts.filter((post) => (post.node.frontmatter.placement === 1))[0];
-  const homePage = posts.filter((post) => (post.node.frontmatter.placement === 2))[0];
+  const intro = posts.filter(
+    (post) => post.node.frontmatter.placement === 1
+  )[0];
+  const homePage = posts.filter(
+    (post) => post.node.frontmatter.placement === 2
+  )[0];
 
-  return (<HomePageTemplate
-    contentComponent={HTMLContent}
-    title={homePage.node.frontmatter.title}
-    content={homePage.node.html}
-    intro={intro.node.html}
-  />);
+  return (
+    <HomePageTemplate
+      contentComponent={HTMLContent}
+      title={homePage.node.frontmatter.title}
+      content={homePage.node.html}
+      intro={intro.node.html}
+    />
+  );
 };
 
 export const homePageQuery = graphql`
   query HomePage($path: String!) {
-    allMarkdownRemark(filter: {frontmatter: { path: { eq: $path }}}) {
+    allMarkdownRemark(filter: { frontmatter: { path: { eq: $path } } }) {
       edges {
         node {
           html

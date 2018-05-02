@@ -7,18 +7,24 @@ import backgroundImageMobile from '../assets/images/about/happy-kid-picture-mobi
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
   let backgroundCss = {
-    backgroundImage: "url(" + backgroundImage + ")",
-  },
-  backgroundCssMobile = {
-    backgroundImage: "url(" + backgroundImageMobile + ")",
-  };
+      backgroundImage: 'url(' + backgroundImage + ')'
+    },
+    backgroundCssMobile = {
+      backgroundImage: 'url(' + backgroundImageMobile + ')'
+    };
 
   return (
     <React.Fragment>
       <header id="about-header">
         <div className="Hero Hero--about">
-          <div className="Hero-background show-for-medium" style={backgroundCss}></div>
-          <div className="Hero-background hide-for-medium" style={backgroundCssMobile}></div>
+          <div
+            className="Hero-background show-for-medium"
+            style={backgroundCss}
+          />
+          <div
+            className="Hero-background hide-for-medium"
+            style={backgroundCssMobile}
+          />
         </div>
       </header>
       <section id="content">
@@ -40,11 +46,13 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 export default ({ data }) => {
   const { markdownRemark: post } = data;
 
-  return (<AboutPageTemplate
-    contentComponent={HTMLContent}
-    title={post.frontmatter.title}
-    content={post.html}
-  />);
+  return (
+    <AboutPageTemplate
+      contentComponent={HTMLContent}
+      title={post.frontmatter.title}
+      content={post.html}
+    />
+  );
 };
 
 export const aboutPageQuery = graphql`

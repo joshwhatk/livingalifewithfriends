@@ -12,7 +12,11 @@ const Navbar = () => (
           <ul className="menu">
             <Link to="/" className="brand">
               <figure className="image">
-                <img src={logo} alt="Living a Life with Friends" style={{ width: '388px' }} />
+                <img
+                  src={logo}
+                  alt="Living a Life with Friends"
+                  style={{ width: '388px' }}
+                />
               </figure>
             </Link>
           </ul>
@@ -20,9 +24,7 @@ const Navbar = () => (
         <div className="top-bar-right">
           <ul className="menu">
             <li>
-              <Link to="/podcast">
-                Podcast
-              </Link>
+              <Link to="/podcast">Podcast</Link>
             </li>
           </ul>
         </div>

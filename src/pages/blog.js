@@ -1,15 +1,15 @@
-import React from "react";
-import Link from "gatsby-link";
-import Script from "react-load-script";
-import graphql from "graphql";
+import React from 'react';
+import Link from 'gatsby-link';
+import Script from 'react-load-script';
+import graphql from 'graphql';
 
 export default class BlogPage extends React.Component {
   handleScriptLoad() {
     if (typeof window !== `undefined` && window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
+      window.netlifyIdentity.on('init', (user) => {
         if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
           });
         }
       });
@@ -31,19 +31,18 @@ export default class BlogPage extends React.Component {
           <div className="content">
             <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
           </div>
-          {posts
-          .map(({ node: post }) => (
+          {posts.map(({ node: post }) => (
             <div
               className="content"
-              style={{ border: "1px solid #eaecee", padding: "2em 4em" }}
+              style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
               key={post.id}
             >
               <p>
-                  <Link className="has-text-primary" to={post.frontmatter.path}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
+                <Link className="has-text-primary" to={post.frontmatter.path}>
+                  {post.frontmatter.title}
+                </Link>
+                <span> &bull; </span>
+                <small>{post.frontmatter.date}</small>
               </p>
               <p>
                 {post.excerpt}
@@ -64,8 +63,8 @@ export default class BlogPage extends React.Component {
 export const pageQuery = graphql`
   query BlogQuery {
     allMarkdownRemark(
-        filter: {frontmatter: { templateKey:{ eq: "blog-post"}}}
-        sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
         node {
