@@ -11,7 +11,7 @@ module.exports = {
     podcastInformation: {
       title: 'Stressed to Blessed',
       url: `https://livingalifewithfriends.com/podcast`,
-      description: `Something serios`,
+      description: `Something serios`
     }
   },
   plugins: [
@@ -21,29 +21,29 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
+        name: 'pages'
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/img`,
-        name: 'images',
-      },
+        name: 'images'
+      }
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [],
-      },
+        plugins: []
+      }
     },
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
+        modulePath: `${__dirname}/src/cms/cms.js`
+      }
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -61,8 +61,12 @@ module.exports = {
             }
           }
         }`,
-        setup: ({ query: { site: { siteMetadata }, ...rest } }) => {
-
+        setup: ({
+          query: {
+            site: { siteMetadata },
+            ...rest
+          }
+        }) => {
           let podcastMetadata = {
             generator: 'JoshWhatK Podcast RSS Generator',
             title: siteMetadata.podcastInformation.title,
@@ -72,19 +76,22 @@ module.exports = {
             copyright: `Josh & Ashley Friend ${new Date().getFullYear()}`,
             managingEditor: 'Josh & Ashley Friend',
             custom_namespaces: {
-              'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
+              itunes: 'http://www.itunes.com/dtds/podcast-1.0.dtd'
             },
             custom_elements: [
               {
                 image: {
                   url: '',
                   title: '',
-                  link: siteMetadata.podcastInformation.url,
+                  link: siteMetadata.podcastInformation.url
                 }
               },
               { 'itunes:author': authors },
               { 'itunes:subtitle': 'A show about everything' },
-              { 'itunes:summary': 'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store' },
+              {
+                'itunes:summary':
+                  'All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our podcast in the Podcasts app or in the iTunes Store'
+              },
               { 'itunes:keywords': '' },
               {
                 'itunes:owner': [
@@ -96,7 +103,8 @@ module.exports = {
               {
                 'itunes:image': {
                   _attr: {
-                    href: 'http://example.com/podcasts/everything/AllAboutEverything.jpg'
+                    href:
+                      'http://example.com/podcasts/everything/AllAboutEverything.jpg'
                   }
                 }
               },
@@ -106,19 +114,19 @@ module.exports = {
                   { 'itunes:category': { _attr: { text: 'Gadgets' } } }
                 ]
               },
-              { 'itunes:type' : 'episodic' },
+              { 'itunes:type': 'episodic' }
             ]
           };
 
           return {
             ...podcastMetadata,
-            ...rest,
+            ...rest
           };
         },
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 let url = site.siteMetadata.siteUrl + '/';
                 url += edge.node.frontmatter.path.replace(/^(\/*)(.*)/, '$2');
 
@@ -127,22 +135,26 @@ module.exports = {
                   url,
                   guid: url,
                   custom_elements: [
-                    { "content:encoded": edge.node.html },
-                    { enclusure: [
-                      { _attr: {
-                        length: '',
-                        type: 'audio/mpeg',
-                        url: edge.node.frontmatter.audioUrl,
-                      } },
-                    ]},
+                    { 'content:encoded': edge.node.html },
+                    {
+                      enclusure: [
+                        {
+                          _attr: {
+                            length: '',
+                            type: 'audio/mpeg',
+                            url: edge.node.frontmatter.audioUrl
+                          }
+                        }
+                      ]
+                    },
                     { 'itunes:image': '' },
                     { 'itunes:duration': '' },
                     { 'itunes:explicity': 'clean' },
                     { 'itunes:keywords': '' },
                     { 'itunes:subtitle': '' },
                     { 'itunes:episodeType': 'full' },
-                    { 'itunes:author': authors },
-                  ],
+                    { 'itunes:author': authors }
+                  ]
                 });
               });
             },
@@ -169,10 +181,10 @@ module.exports = {
               }
             }
           `,
-            output: "/podcast.xml",
-          },
-        ],
-      },
-    },
-  ],
+            output: '/podcast.xml'
+          }
+        ]
+      }
+    }
+  ]
 };
