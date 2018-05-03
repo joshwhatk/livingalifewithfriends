@@ -74,6 +74,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       const pagePath = node.frontmatter.path;
+      if (node.frontmatter.templateKey === 'home-page') {
+        return;
+      }
       createPage({
         path: pagePath,
         component: path.resolve(

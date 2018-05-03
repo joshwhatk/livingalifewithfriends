@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomePageTemplate } from '../../templates/home-page';
+import { HomePageTemplate } from '../../pages/index';
 
 const HomePagePreview = ({ entry, widgetFor }) => {
   const entryBlurbs = entry.getIn(['data', 'intro']);
