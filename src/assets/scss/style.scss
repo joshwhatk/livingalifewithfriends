@@ -1,0 +1,55 @@
+@import "settings";
+@import "foundation-optional";
+
+//-- Feature Toggles within Foundation
+$flex: true;
+$prototype: false;
+$xy-grid: true;
+
+//-- RS Component Toggles
+$foundation-grid: true;
+$foundation-global-styles: true;
+$foundation-typography: true;
+$foundation-forms: true;
+$foundation-button: true;
+// $foundation-accordion: true;
+// $foundation-accordion-menu: true;
+// $foundation-badge: true;
+// $foundation-breadcrumbs: true;
+// $foundation-button-group: true;
+// $foundation-callout: true;
+// $foundation-card: true;
+// $foundation-close-button: true;
+$foundation-menu: true;
+// $foundation-menu-icon: true;
+// $foundation-drilldown-menu: true;
+// $foundation-dropdown: true;
+// $foundation-dropdown-menu: true;
+// $foundation-responsive-embed: true;
+// $foundation-label: true;
+// $foundation-media-object: true;
+// $foundation-off-canvas: true;
+// $foundation-orbit: true;
+// $foundation-pagination: true;
+// $foundation-progress-bar: true;
+// $foundation-slider: true;
+// $foundation-sticky: true;
+// $foundation-reveal: true;
+// $foundation-switch: true;
+// $foundation-table: true;
+// $foundation-tabs: true;
+// $foundation-thumbnail: true;
+// $foundation-title-bar: true;
+// $foundation-tooltip: true;
+$foundation-top-bar: true;
+$foundation-visibility-classes: true;
+// $foundation-float-classes: true;
+
+@include foundation-optional();
+
+@import "base/grid";
+@import "base/fonts";
+@import "base/typography";
+
+@import "components/heroes";
+@import "components/navbar";

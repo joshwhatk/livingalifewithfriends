@@ -1,0 +1,25 @@
+nav#main-navigation {
+  border-bottom: 3px solid $secondary-color;
+  margin-bottom: 1rem;
+}
+
+.menu {
+  justify-content: center;
+
+  @include breakpoint(tablet) {
+    justify-content: left;
+  }
+  a {
+    text-transform: uppercase;
+    font-family: $heading-font;
+    font-weight: bold;
+
+    @include breakpoint(tablet) {
+      font-size: 1.4rem;
+    }
+
+    &.brand {
+      text-transform: lowercase;
+    }
+  }
+}

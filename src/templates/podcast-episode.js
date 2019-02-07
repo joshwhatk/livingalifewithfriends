@@ -3,7 +3,7 @@ import graphql from 'graphql';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
 
-export const BlogPostTemplate = ({
+export const PodcastEpisodeTemplate = ({
   content,
   contentComponent,
   description,
@@ -34,7 +34,7 @@ export default ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <BlogPostTemplate
+    <PodcastEpisodeTemplate
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
@@ -45,7 +45,7 @@ export default ({ data }) => {
 };
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query PodcastEpisodeByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {

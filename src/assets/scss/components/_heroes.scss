@@ -1,0 +1,15 @@
+.Hero {
+  margin-bottom: 1rem;
+
+  &-background {
+    position: relative;
+    background-color: $default-hero-background-color;
+    background-size: cover;
+    background-position: center center;
+    min-height: 69vw;
+
+    @include breakpoint(medium) {
+      min-height: 35vw;
+    }
+  }
+}

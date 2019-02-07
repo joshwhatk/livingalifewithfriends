@@ -1,79 +1,84 @@
-import React from "react";
-import Link from "gatsby-link";
-import Script from "react-load-script";
-import graphql from "graphql";
+import React from 'react';
+import graphql from 'graphql';
+import Content, { HTMLContent } from '../components/Content';
+import backgroundImage from '../assets/images/about/happy-kid-picture.jpg';
+import backgroundImageMobile from '../assets/images/about/happy-kid-picture-mobile.jpg';
 
-export default class IndexPage extends React.Component {
-  handleScriptLoad() {
-    if (typeof window !== `undefined` && window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-    window.netlifyIdentity.init();
-  }
+export const HomePageTemplate = ({
+  title,
+  content,
+  contentComponent,
+  intro
+}) => {
+  const PageContent = contentComponent || Content;
+  let backgroundCss = {
+      backgroundImage: 'url(' + backgroundImage + ')'
+    },
+    backgroundCssMobile = {
+      backgroundImage: 'url(' + backgroundImageMobile + ')'
+    };
 
-  render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
-
-    return (
-      <section className="section">
-        <Script
-          url="https://identity.netlify.com/v1/netlify-identity-widget.js"
-          onLoad={() => this.handleScriptLoad()}
-        />
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-          </div>
-          {posts
-            .filter(post => post.node.frontmatter.templateKey === "blog-post")
-            .map(({ node: post }) => (
-              <div
-                className="content"
-                style={{ border: "1px solid #eaecee", padding: "2em 4em" }}
-                key={post.id}
-              >
-                <p>
-                  <Link className="has-text-primary" to={post.frontmatter.path}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.frontmatter.path}>
-                    Keep Reading →
-                  </Link>
-                </p>
+  return (
+    <React.Fragment>
+      <header id="about-header">
+        <div className="Hero Hero--about">
+          <div
+            className="Hero-background show-for-medium"
+            style={backgroundCss}
+          />
+          <div
+            className="Hero-background hide-for-medium"
+            style={backgroundCssMobile}
+          />
+        </div>
+      </header>
+      <section id="content">
+        <div className="text-container">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="section">
+                <h1>{title}</h1>
+                <PageContent className="content" content={intro} />
+                <PageContent className="content" content={content} />
               </div>
-            ))}
+            </div>
+          </div>
         </div>
       </section>
-    );
-  }
-}
+    </React.Fragment>
+  );
+};
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+export default ({ data }) => {
+  const { edges: posts } = data.allMarkdownRemark;
+  //-- @hardcoded: this matches the placement exactly
+  const intro = posts.filter(
+    (post) => post.node.frontmatter.placement === 1
+  )[0];
+  const homePage = posts.filter(
+    (post) => post.node.frontmatter.placement === 2
+  )[0];
+
+  return (
+    <HomePageTemplate
+      contentComponent={HTMLContent}
+      title={homePage.node.frontmatter.title}
+      content={homePage.node.html}
+      intro={intro.node.html}
+    />
+  );
+};
+
+export const homePageQuery = graphql`
+  query HomePage($path: String!) {
+    allMarkdownRemark(filter: { frontmatter: { path: { eq: $path } } }) {
       edges {
         node {
-          excerpt(pruneLength: 400)
-          id
+          html
           frontmatter {
-            title
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
             path
+            title
+            placement
           }
         }
       }

@@ -1,0 +1,7 @@
+p {
+  font-size: $paragraph-font-size-small;
+
+  @include breakpoint(medium) {
+    font-size: $paragraph-font-size;
+  }
+}

@@ -1,11 +1,9 @@
 ---
-templateKey: 'about-page'
-path: /about
+templateKey: 'home-page'
+path: /
 title: This is Us
+placement: 2
 ---
-
-### Hi there!
-We are Josh and Ashley! We currently host a podcast, [Stressed to Blessed](/podcast), where we talk about building family culture and are available [@alifewithfriends](https://www.instagram.com/alifewithfriends/) on Instagram.
 
 ### A Little About Us
 We met at the age of 13 at Josh’s home church ⛪️ (imagine wallpaper, blue carpet and wine colored chairs&mdash;straight up 90s! 😆) Engaged at 17 and married at 19, we now have 3 beautiful girls that inspire us daily! 👧🏻👧🏻👧🏻🎀
